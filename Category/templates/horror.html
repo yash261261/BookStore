@@ -1,0 +1,40 @@
+{% extends 'index.html'%}
+
+{% block body %}
+    <style>
+        table,th,tr,td {
+        border: 2px solid #396fc6;
+        border-collapse: collapse
+        }
+        </style>
+
+    <h1>Top 5 Horror Books</h1>
+
+     <table class="table table-striped">
+         <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Publisher</th>
+                <th>language</th>
+                <th>year</th>
+                <th>Rating User</th>
+            </tr>
+            </thead>
+            {% for books in bookdata %}
+         <tbody>
+        <tr>
+            <td>{{books.title}}</td>
+            <td>{{books.category}}</td>
+            <td>{{books.publisher}}</td>
+            <td>{{books.language}}</td>
+            <td>{{books.years}}</td>
+            <td>{{books.rating_user}}</td>
+        </tr>
+         </tbody>
+        {% endfor %}
+        </table>
+
+        <a href = "{% url 'allbooks' %}"> Back To Books</a>
+{% endblock %}
+

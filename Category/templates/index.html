@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<style>
+    li { float:left;
+    margin:12px;
+    list-style-type:none;}
+
+    .right{float:right;
+    margin-right:150px;}
+
+    .mainpage{ border:3px solid black;
+    height:100px;
+    width:1500px;
+     }
+
+</style>
+<body>
+
+
+<div class="mainpage">
+    <nav>
+        <ul>
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'allbooks'%}" role="button">Books</a>
+                <!--<a href=" {% url 'allbooks'%} ">Books</a>-->
+            </li>
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'author'%}" role="button">Authors</a>
+
+
+            </li>
+
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'fiction'%}" role="button">Fiction Books</a>
+                <!--<a href=" {% url 'fiction'%} ">Fiction Books</a>-->
+            </li>
+
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'horror'%}" role="button">Horror Books</a>
+                <!--<a href=" {% url 'horror'%} ">Horror Books</a>-->
+            </li>
+
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'suspense'%}" role="button">Suspense Books</a>
+                <!--<a href=" {% url 'suspense'%} ">Suspense Books</a>-->
+            </li>
+
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'add_book'%}" role="button">Add Books</a>
+                <!--<a href="http://127.0.0.1:8000/addbook/">Add Books</a>-->
+            </li>
+
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'addauthor'%}" role="button">Add Author</a>
+                <!--<a href="http://127.0.0.1:8000/addauthor/">Add Author</a>-->
+            </li>
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'assignauthor' %}" role="button">Assign Author</a>
+            </li>
+
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'bjson' %}" role="button">Books Json</a>
+            </li>
+             <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'ajson' %}" role="button">Author Json</a>
+            </li>
+
+            <li>
+                <a class="btn btn-primary btn-sm" href="{% url 'logout_view' %}" role="button">Logout</a>
+
+            </li>
+
+
+        </ul>
+    </nav>
+</div><br>
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

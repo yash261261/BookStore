@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login to BookStore</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .container{
+            border:2px solid black;
+            width:300px;
+            height:280px;
+            margin-left:500px;
+        }
+        .input-group{
+            margin-top:10px;
+            height:40px;
+        }
+
+
+    </style>
+    </head>
+    <body>
+    <h1><center>Welcome to BookStore</center></h1>
+    <div class = container>
+       <center> <form method="post">
+           {% csrf_token %}
+
+            <br><label for="uname"><b>Username</b></label><br>
+
+             <div class="input-group">
+             <!--<label for="uname"><b>Username</b></label><br>-->
+                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                 <input type="text" class="form-control"  placeholder="Enter Username" name="username" required><br><br>
+             </div>
+
+
+           <label for="psw"><b>Password</b></label><br>
+
+           <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                 <input type="password" class="form-control"  placeholder="Enter Password" name="password" required><br><br>
+           </div>
+
+
+    <!--<button type="submit">Login</button>-->
+           <br><button type="submit" class="btn btn-primary btn-sm">Login</button>
+
+        </form></center>
+
+    </div>
+
+
+    </body>
+</html>

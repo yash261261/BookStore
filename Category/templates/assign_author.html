@@ -1,0 +1,34 @@
+<!--<html>-->
+    <!--<head>-->
+        <!--<title>Assign Author</title>-->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
+
+    <!--</head>-->
+    <!--<body>-->
+    <!--<h1><center>Assign Author</center></h1>-->
+{% extends 'index.html'%}
+
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+      <select name="bookid">
+    {% for books in bookdata %}
+  <option value="{{books.id}}">{{books.title}}</option>
+
+    {% endfor %}
+
+    </select>
+
+
+<select name="authorid" >
+
+     {% for author in authordata %}
+  <option value="{{author.id}}">{{author.author_fname}}</option>
+    {% endfor %}
+    </select>
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+{% endblock %}
+    <!--</body>-->
+<!--</html>-->

@@ -1,0 +1,43 @@
+{% extends 'index.html'%}
+
+{% block body %}
+        <style>
+        table,th,tr,td{
+        border: 2px solid #396fc6;
+        border-collapse: collapse;
+        }
+
+        </style>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Author First Name</th>
+                <th>Author Last Name</th>
+                <th>Rating User</th>
+                <th>Delete Author</th>
+
+            </tr>
+            </thead>
+            {% for author in authordata %}
+
+            <tbody>
+            <tr>
+                <td>{{author.author_fname}}</td>
+                <td>{{author.author_lname}}</td>
+                <td>{{author.rating_user}}</td>
+                <td><a href = "{% url 'del_author' author.id %}">Delete</a></td>
+
+
+                <!--<td><a href = "http://127.0.0.1:8000/books/delete/{{books.id}}">Delete</a></td>-->
+
+            </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+
+        <a href = "{%url 'fiction' %}">  Fiction Books </a><br>
+        <a href = "{%url 'horror' %}">  Horror Books </a><br>
+        <a href = "{%url 'suspense' %}">  Suspense Books </a>
+
+{% endblock %}
